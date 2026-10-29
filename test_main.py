@@ -47,7 +47,7 @@ class TestHandScoring(unittest.TestCase):
             [(2, "♥"), (7, "♥"), (9, "♥"), (11, "♥"), (13, "♥")],
             [(3, "♣"), (8, "♦"), (10, "♥"), (12, "♠"), (13, "♣")],
         ]
-        self.assertEqual(score_hands(hands), 148)
+        self.assertEqual(sum(score_hand(hand) for hand in hands), 148)
 
 
     def test_jack_high(self):

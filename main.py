@@ -26,18 +26,10 @@ def _is_flush(hand: Hand) -> bool:
 def available_combinations(hand: Hand) -> CombinationScores:
     ranks = [rank for rank, suit in hand]
     counts = Counter(ranks)
-    straight = len(counts) == 5 and max(ranks) - min(ranks) == 4
-    flush = len({suit for rank, suit in hand}) == 1
-    if straight and flush:
-        return 80
-    if 4 in counts.values():
-        return 60
-    if sorted(counts.values()) == [2, 3]:
-        return 50
-    if flush:
-        return 45
-    if straight:
-        return 40
+    straight = _is_straight(ranks)
+    flush = _is_flush(hand)
+    combinations = {"high_card": max(ranks)}
+
     if max(counts.values()) >= 3:
         return 30
     return max(ranks)
