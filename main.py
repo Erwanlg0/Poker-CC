@@ -53,4 +53,10 @@ def score_hands(hands: list[Hand]) -> int:
     return sum(score_hand(hand) for hand in hands)
 
 
+def score_hands_bonus(hands: list[Hand]) -> int:
+    limited_combinations = {"full_house"}
+    used_combinations = set()
+    total = 0
+    return total
+
 ### ♥ ♠ ♦ ♣
