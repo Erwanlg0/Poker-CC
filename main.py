@@ -9,6 +9,8 @@ def score_hand(hand: Hand) -> int:
         return 14
     if 13 in ranks:
         return 13
+    if 12 in ranks:
+        return 12
     return 0
 
 
