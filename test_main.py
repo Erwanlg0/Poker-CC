@@ -17,6 +17,10 @@ class TestHandScoring(unittest.TestCase):
         self.assertEqual(score_hand(hand), 12)
 
 
+    def test_jack_high(self):
+        hand = [(2, "♥"), (4, "♠"), (6, "♦"), (9, "♣"), (11, "♠")]
+        self.assertEqual(score_hand(hand), 11)
+
 if __name__ == "__main__":
     unittest.main()
 
