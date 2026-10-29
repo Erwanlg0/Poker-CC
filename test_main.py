@@ -16,6 +16,10 @@ class TestHandScoring(unittest.TestCase):
         hand = [(2, "♥"), (4, "♠"), (6, "♦"), (9, "♣"), (12, "♠")]
         self.assertEqual(score_hand(hand), 12)
 
+    def test_three_of_a_kind(self):
+        hand = [(2, "♥"), (2, "♠"), (2, "♦"), (9, "♣"), (13, "♠")]
+        self.assertEqual(score_hand(hand), 30)
+
 
     def test_jack_high(self):
         hand = [(2, "♥"), (4, "♠"), (6, "♦"), (9, "♣"), (11, "♠")]

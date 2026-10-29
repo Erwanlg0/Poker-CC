@@ -1,15 +1,17 @@
+from collections import Counter
+
+
 Card = tuple[int, str]
 Hand = list[Card]
 
 
 
 def score_hand(hand: Hand) -> int:
-    return max(rank for rank, suit in hand)
-
-
-
-
-
+    ranks = [rank for rank, suit in hand]
+    counts = Counter(ranks)
+    if max(counts.values()) >= 3:
+        return 30
+    return max(ranks)
 
 
 
