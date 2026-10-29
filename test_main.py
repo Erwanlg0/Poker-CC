@@ -21,6 +21,10 @@ class TestHandScoring(unittest.TestCase):
         hand = [(2, "♥"), (4, "♠"), (6, "♦"), (9, "♣"), (11, "♠")]
         self.assertEqual(score_hand(hand), 11)
 
+    def test_ten_high(self):
+        hand = [(2, "♥"), (4, "♠"), (6, "♦"), (9, "♣"), (10, "♠")]
+        self.assertEqual(score_hand(hand), 10)
+
 if __name__ == "__main__":
     unittest.main()
 
