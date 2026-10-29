@@ -28,6 +28,8 @@ def score_hand(hand: Hand) -> int:
 
 
 
+def score_hands(hands: list[Hand]) -> int:
+    return sum(score_hand(hand) for hand in hands)
 
 
 ### ♥ ♠ ♦ ♣

@@ -40,6 +40,15 @@ class TestHandScoring(unittest.TestCase):
         hand = [(5, "♥"), (6, "♥"), (7, "♥"), (8, "♥"), (9, "♥")]
         self.assertEqual(score_hand(hand), 80)
 
+    def test_assignment_example(self):
+        hands = [
+            [(2, "♥"), (2, "♠"), (2, "♦"), (9, "♣"), (9, "♠")],
+            [(5, "♣"), (6, "♦"), (7, "♥"), (8, "♠"), (9, "♣")],
+            [(2, "♥"), (7, "♥"), (9, "♥"), (11, "♥"), (13, "♥")],
+            [(3, "♣"), (8, "♦"), (10, "♥"), (12, "♠"), (13, "♣")],
+        ]
+        self.assertEqual(score_hands(hands), 148)
+
 
     def test_jack_high(self):
         hand = [(2, "♥"), (4, "♠"), (6, "♦"), (9, "♣"), (11, "♠")]
