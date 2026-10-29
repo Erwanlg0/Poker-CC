@@ -1,0 +1,13 @@
+import unittest
+
+from main import score_hand
+
+
+class TestHandScoring(unittest.TestCase):
+    def test_ace_high(self):
+        hand = [(2, "♥"), (4, "♠"), (6, "♦"), (9, "♣"), (14, "♠")]
+        self.assertEqual(score_hand(hand), 14)
+
+
+if __name__ == "__main__":
+    unittest.main()
