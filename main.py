@@ -31,8 +31,18 @@ def available_combinations(hand: Hand) -> CombinationScores:
     combinations = {"high_card": max(ranks)}
 
     if max(counts.values()) >= 3:
-        return 30
-    return max(ranks)
+        combinations["three_of_a_kind"] = COMBINATION_SCORES["three_of_a_kind"]
+    if straight:
+        combinations["straight"] = COMBINATION_SCORES["straight"]
+    if flush:
+        combinations["flush"] = COMBINATION_SCORES["flush"]
+    if sorted(counts.values()) == [2, 3]:
+        combinations["full_house"] = COMBINATION_SCORES["full_house"]
+    if 4 in counts.values():
+        combinations["four_of_a_kind"] = COMBINATION_SCORES["four_of_a_kind"]
+    if straight and flush:
+        combinations["straight_flush"] = COMBINATION_SCORES["straight_flush"]
+    return combinations
 
 
 def score_hand(hand: Hand) -> int:
